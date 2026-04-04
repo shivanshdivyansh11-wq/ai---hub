@@ -1,53 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>AI HUB - Python & AI Projects for Students</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial;
-      background: #0f172a;
-      color: white;
-    }
-    header {
-      display: flex;
-      justify-content: space-between;
-      padding: 20px;
-      background: #020617;
-    }
-    h1 span {
-      color: #22c55e;
-    }
-    .hero {
-      text-align: center;
-      padding: 80px 20px;
-    }
-    .btn {
-      background: #2563eb;
-      padding: 12px 20px;
-      border: none;
-      color: white;
-      cursor: pointer;
-      border-radius: 8px;
-      font-size: 14px;
-    }
-    .projects {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      padding: 40px;
-      flex-wrap: wrap;
-    }
-    .card {
-      background: #1e293b;
-      padding: 20px;
-      border-radius: 10px;
-      width: 250px;
-      text-align: center;
-    }
-  </style>
+<meta charset="UTF-8">
+<title>AI HUB - Python & AI Projects</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: Arial;
+  background: #0f172a;
+  color: white;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  background: #020617;
+}
+
+h1 span {
+  color: #22c55e;
+}
+
+.hero {
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.btn {
+  background: #2563eb;
+  padding: 12px 20px;
+  border: none;
+  color: white;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+.projects {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 40px;
+  flex-wrap: wrap;
+}
+
+.card {
+  background: #1e293b;
+  padding: 20px;
+  border-radius: 10px;
+  width: 250px;
+  text-align: center;
+}
+</style>
+
 </head>
+
 <body>
 
 <header>
@@ -57,28 +65,28 @@
 
 <section class="hero">
   <h2>🚀 Ready-Made Python & AI Projects for Students</h2>
-  <p>Get complete projects with code, explanation, and presentation for your school exhibitions.</p>
-  
+  <p>Get complete projects with code, explanation, and presentation.</p>
+
   <button class="btn">Browse Projects</button>
-  
+
   <br><br>
-  
-  <p style="font-size:14px; color:#94a3b8;">
+
+  <p style="color:#94a3b8;">
     ✔ Easy to Understand &nbsp;&nbsp; ✔ Affordable &nbsp;&nbsp; ✔ Instant Download
   </p>
 </section>
 
 <section class="projects">
 
-  <!-- Healthcare AI -->
+  <!-- HEALTHCARE AI -->
   <div class="card">
     <h3>🤖 Healthcare AI</h3>
     <p>AI-based health monitoring system</p>
 
     <p style="color:#22c55e; font-weight:bold;">FREE</p>
 
-    <p style="color:#22c55e; font-weight:bold;">
-      🔥 Free for first 100 users (10 days only)
+    <p id="offerText" style="color:#22c55e; font-weight:bold;">
+      🔥 Free for first 100 users
     </p>
 
     <p style="font-size:14px; color:#94a3b8;">
@@ -87,44 +95,58 @@
       ✔ Full Explanation
     </p>
 
-    <a href="https://drive.google.com/uc?export=download&id=1ICYO_575B40C0UAnFLOhtNjBkksyAlN-" target="_blank">
-      <button class="btn">Download Now</button>
+    <a id="downloadLink" href="https://drive.google.com/uc?export=download&id=1ICYO_575B40C0UAnFLOhtNjBkksyAlN-" target="_blank">
+      <button id="downloadBtn" class="btn" onclick="handleDownload()">Download Now</button>
     </a>
   </div>
 
-  <!-- Face Recognition -->
+  <!-- OTHER PROJECT -->
   <div class="card">
     <h3>🧠 AI Face Recognition</h3>
     <p>Face detection using OpenCV</p>
-
-    <p style="color:#22c55e; font-weight:bold;">₹299</p>
-
-    <p style="font-size:14px; color:#94a3b8;">
-      ✔ Real-time detection<br>
-      ✔ Easy setup<br>
-      ✔ School-ready
-    </p>
-
+    <p style="color:#22c55e;">₹299</p>
     <button class="btn">Coming Soon</button>
   </div>
 
-  <!-- Python Game -->
   <div class="card">
     <h3>🎮 Python Game</h3>
-    <p>Fun game project using Python</p>
-
-    <p style="color:#22c55e; font-weight:bold;">₹99</p>
-
-    <p style="font-size:14px; color:#94a3b8;">
-      ✔ Beginner friendly<br>
-      ✔ Complete code<br>
-      ✔ Easy to present
-    </p>
-
+    <p>Fun game project</p>
+    <p style="color:#22c55e;">₹99</p>
     <button class="btn">Coming Soon</button>
   </div>
 
 </section>
+
+<!-- SCRIPT -->
+<script>
+let maxUsers = 100;
+
+// Get stored downloads
+let downloads = localStorage.getItem("downloads");
+
+if (downloads === null) {
+    downloads = 0;
+} else {
+    downloads = parseInt(downloads);
+}
+
+// If limit reached
+if (downloads >= maxUsers) {
+    document.getElementById("offerText").innerText = "❌ Offer Expired";
+    document.getElementById("downloadBtn").innerText = "Paid Version Only";
+    document.getElementById("downloadBtn").disabled = true;
+}
+
+// When clicked
+function handleDownload() {
+    downloads++;
+    localStorage.setItem("downloads", downloads);
+
+    if (downloads >= maxUsers) {
+        alert("⚠️ Offer limit reached!");
+    }
+}
+</script>
 
 </body>
 </html>
