@@ -10,23 +10,19 @@
       background: #0f172a;
       color: white;
     }
-
     header {
       display: flex;
       justify-content: space-between;
       padding: 20px;
       background: #020617;
     }
-
     h1 span {
       color: #22c55e;
     }
-
     .hero {
       text-align: center;
       padding: 80px 20px;
     }
-
     .btn {
       background: #2563eb;
       padding: 12px 20px;
@@ -34,8 +30,8 @@
       color: white;
       cursor: pointer;
       border-radius: 8px;
+      font-size: 14px;
     }
-
     .projects {
       display: flex;
       justify-content: center;
@@ -43,34 +39,15 @@
       padding: 40px;
       flex-wrap: wrap;
     }
-
     .card {
       background: #1e293b;
       padding: 20px;
       border-radius: 10px;
-      width: 220px;
+      width: 250px;
       text-align: center;
-      transition: transform 0.3s;
-    }
-
-    .card:hover {
-      transform: scale(1.05);
-    }
-
-    .price {
-      color: #22c55e;
-      font-weight: bold;
-      margin: 10px 0;
-    }
-
-    .features {
-      font-size: 14px;
-      color: #94a3b8;
-      margin-bottom: 10px;
     }
   </style>
 </head>
-
 <body>
 
 <header>
@@ -93,43 +70,58 @@
 
 <section class="projects">
 
-  <!-- Healthcare Robot -->
+  <!-- Healthcare AI -->
   <div class="card">
-    <h3>🤖 Healthcare Robot</h3>
+    <h3>🤖 Healthcare AI</h3>
     <p>AI-based health monitoring system</p>
-    <p class="price">₹499</p>
-    <p class="features">
+
+    <p style="color:#22c55e; font-weight:bold;">FREE</p>
+
+    <p style="color:#22c55e; font-weight:bold;">
+      🔥 Free for first 100 users (10 days only)
+    </p>
+
+    <p style="font-size:14px; color:#94a3b8;">
       ✔ Python Code<br>
       ✔ Working Model Idea<br>
       ✔ Full Explanation
     </p>
-    <button class="btn">View Project</button>
+
+    <a href="https://drive.google.com/uc?export=download&id=1ICYO_575B40C0UAnFLOhtNjBkksyAlN-" target="_blank">
+      <button class="btn">Download Now</button>
+    </a>
   </div>
 
-  <!-- AI Face Recognition -->
+  <!-- Face Recognition -->
   <div class="card">
     <h3>🧠 AI Face Recognition</h3>
     <p>Face detection using OpenCV</p>
-    <p class="price">₹299</p>
-    <p class="features">
+
+    <p style="color:#22c55e; font-weight:bold;">₹299</p>
+
+    <p style="font-size:14px; color:#94a3b8;">
       ✔ Real-time detection<br>
       ✔ Easy setup<br>
       ✔ School-ready
     </p>
-    <button class="btn">View Project</button>
+
+    <button class="btn">Coming Soon</button>
   </div>
 
   <!-- Python Game -->
   <div class="card">
     <h3>🎮 Python Game</h3>
     <p>Fun game project using Python</p>
-    <p class="price">₹99</p>
-    <p class="features">
+
+    <p style="color:#22c55e; font-weight:bold;">₹99</p>
+
+    <p style="font-size:14px; color:#94a3b8;">
       ✔ Beginner friendly<br>
       ✔ Complete code<br>
       ✔ Easy to present
     </p>
-    <button class="btn">View Project</button>
+
+    <button class="btn">Coming Soon</button>
   </div>
 
 </section>
